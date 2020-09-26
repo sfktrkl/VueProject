@@ -10,7 +10,8 @@
       <!-- Use a custom directive to change color of the header -->
       <!-- Use filters to change outputs. Filters will not change the data,
            they will only change the display of the output.  -->
-      <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
+      <!-- Use router link to go to individual blogs -->
+      <router-link :to="'/blog/' + blog.id"><h2 v-rainbow>{{blog.title | to-uppercase}}</h2></router-link>
       <span id="blog-categories" v-for="category in blog.categories" :key="category">{{category}} </span>
       <article>{{blog.content | snippet}}</article>
       <p id="blog-type">{{blog.type}}</p>
