@@ -1,8 +1,11 @@
 <template>
-  <div id="show-blogs">
+  <!-- All data types can be passed as a value to the custom directive -->
+  <!-- Arguments can also be passed to custom directives -->
+  <div id="show-blogs" v-theme:column="'wide'">
     <h1>All Blog Articles</h1>
     <div v-for="blog in blogs" :key="blog" class="single-blog">
-      <h2>{{blog.title}}</h2>
+      <!-- Use a custom directive to change color of the header -->
+      <h2 v-rainbow>{{blog.title}}</h2>
       <span id="blog-categories" v-for="category in blog.categories" :key="category">{{category}} </span>
       <article>{{blog.content}}</article>
       <p id="blog-type">{{blog.type}}</p>
