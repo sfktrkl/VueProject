@@ -36,26 +36,7 @@ export default {
 }
 </script>
 
-<style>
-#show-blogs{
-  max-width: 800px;
-  margin: 0 auto;
-}
-.single-blog{
-  padding: 2px;
-  margin: 20px;
-  box-sizing: border-box;
-  background: rgb(180, 180, 180);
-}
-h2, article{
-  margin: 20px;
-}
-#blog-type, #blog-categories{
-  color: rgb(88, 84, 84);
-  margin: 20px;
-  text-align: right;
-}
-#search{
-  width: 1180px;
-}
+<!-- Import styles instead of repeating them in each component -->
+<style src='../mixins/styles.css'>
+
 </style>
