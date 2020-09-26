@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     post: function () {
-        this.$http.post('http://localhost:3000/blogs', {
+        this.$http.post('https://blog-ff35a.firebaseio.com/blogs.json', {
             title: this.blog.title,
             content: this.blog.content,
             categories: this.blog.categories,

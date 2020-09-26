@@ -37,9 +37,16 @@ export default {
         },
     },
     created() {
-        this.$http.get('http://localhost:3000/blogs').then(function(data){
-        // Do not show all the data, just show first 10
-        this.blogs = data.body.slice(0, 10);
+        this.$http.get('https://blog-ff35a.firebaseio.com/blogs.json').then(function(data){
+            return data.json();
+        }).then(function(data){
+            var blogsArray = [];
+            for (let key in data)
+            {
+                data[key].id = key;
+                blogsArray.push(data[key]);
+            }
+            this.blogs = blogsArray;
         });
     }
 }

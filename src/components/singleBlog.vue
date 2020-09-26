@@ -22,8 +22,11 @@ export default {
     mixin,
   ],
   created(){
-      this.$http.get('http://localhost:3000/blogs/' + this.id).then(function(data){
+      this.$http.get('https://blog-ff35a.firebaseio.com/blogs/' + this.id + '.json').then(function(data){
+        return data.json();
         this.blog = data.body;
+      }).then(function(data){
+        this.blog = data;
       });
   }
 }
