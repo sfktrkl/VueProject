@@ -36,6 +36,14 @@ import Routes from './routes'
 // Create an instance of the router and define the routes
 const router = new VueRouter({
   routes: Routes,
+  // When we go to a route it creates a request to the server.
+  // and erver will return appropriate result from.
+  // # does not create a request to the server,
+  // it just taking us to a different part of the page
+  // Instead of using #, we should use history mode to avoid this behaviour.
+  // When using history mode, index file in the server is getting back to us
+  // and vue decides to show which component has to be shown.
+  mode: 'history',
 });
 
 new Vue({
