@@ -2,6 +2,7 @@ import addBlog from './components/addBlog.vue'
 import showBlogs from './components/showBlogs.vue'
 import listBlogs from './components/listBlogs.vue'
 import singleBlog from './components/singleBlog.vue'
+import notFound from './components/404.vue'
 
 export default [
     {
@@ -25,4 +26,9 @@ export default [
         path: '/blog/:id',
         component: singleBlog,
     },
+    // Use wild card as path to handle unknown paths
+    {
+        path: '*',
+        component: notFound,
+    }
 ]
