@@ -5,9 +5,11 @@
     <h1>All Blog Articles</h1>
     <div v-for="blog in blogs" :key="blog" class="single-blog">
       <!-- Use a custom directive to change color of the header -->
-      <h2 v-rainbow>{{blog.title}}</h2>
+      <!-- Use filters to change outputs. Filters will not change the data,
+           they will only change the display of the output.  -->
+      <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
       <span id="blog-categories" v-for="category in blog.categories" :key="category">{{category}} </span>
-      <article>{{blog.content}}</article>
+      <article>{{blog.content | snippet}}</article>
       <p id="blog-type">{{blog.type}}</p>
     </div>
   </div>
