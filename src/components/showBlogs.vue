@@ -3,7 +3,10 @@
   <!-- Arguments can also be passed to custom directives -->
   <div id="show-blogs" v-theme:column="'wide'">
     <h1>All Blog Articles</h1>
-    <div v-for="blog in blogs" :key="blog" class="single-blog">
+    <input id="search" type="text" v-model="search" placeholder="Search" />
+    <!-- Use filtered blogs instead of blogs, so blogs which contains
+    // the searched value will be shown only. -->
+    <div v-for="blog in filteredBlogs" :key="blog" class="single-blog">
       <!-- Use a custom directive to change color of the header -->
       <!-- Use filters to change outputs. Filters will not change the data,
            they will only change the display of the output.  -->
@@ -22,10 +25,20 @@ export default {
   data () {
     return {
       blogs: [],
+      search: '',
     }
   },
   methods: {
 
+  },
+  computed: {
+    // Instead of using filters use a computed property,
+    // since its performance is better.
+    filteredBlogs: function () {
+      return this.blogs.filter((blog) => {
+        return blog.title.toUpperCase().match(this.search.toUpperCase());
+      })
+    }
   },
   created() {
     this.$http.get('http://localhost:3000/blogs').then(function(data){
@@ -54,5 +67,8 @@ h2, article{
   color: rgb(88, 84, 84);
   margin: 20px;
   text-align: right;
+}
+#search{
+  width: 1180px;
 }
 </style>
