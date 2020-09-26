@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
+import VueRouter from 'vue-router'
 
 // Use that plugin to create http requests
 Vue.use(VueResource);
@@ -26,8 +27,19 @@ Vue.filter('to-uppercase', function(value) {
   return value.toUpperCase();
 });
 
+// Use that plugin to set up routes
+Vue.use(VueRouter);
+
+// Import routes (they are seperated to keep files organized)
+import Routes from './routes'
+
+// Create an instance of the router and define the routes
+const router = new VueRouter({
+  routes: Routes,
+});
 
 new Vue({
   el: '#app',
+  router: router,
   render: h => h(App)
 })
