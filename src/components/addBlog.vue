@@ -23,6 +23,13 @@
             <p>Education</p>
             <input type="checkbox" value="Education" v-model="blog.categories" />
         </div>
+        <label>Blog Type:</label>
+        <!-- Attach v-model to select tag itself -->
+        <select v-model="blog.type">
+            <!-- Cycle through options for blog types -->
+            <!-- Whichever option we select, select tag will get its value of that option -->
+            <option v-for="type in blogTypes" :key="type">{{type}}</option>
+        </select>
       </form>
       <div id="preview">
         <h3>Preview Blog</h3>
@@ -33,6 +40,7 @@
         <ul>
             <li v-for="category in blog.categories" :key="category">{{category}}</li>
         </ul>
+        <p>Blog Type: {{blog.type}}</p>
       </div>
     </div>
   </div>
@@ -46,7 +54,12 @@ export default {
             title: '',
             content: '',
             categories: [],
+            type: '',
         },
+        blogTypes: [
+            'Public',
+            'Private'
+        ],
     }
   },
   methods: {
@@ -92,5 +105,9 @@ label {
     display: inline-block;
     vertical-align: middle;
 }
+select{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+}
 </style>
-
