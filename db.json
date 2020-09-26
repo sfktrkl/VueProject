@@ -1,0 +1,46 @@
+{
+  "blogs": [
+    {
+      "title": "Heri, inquam, ludis commissis ex urbe profectus veni ad vesperum.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent malesuada suscipit elit, sed tincidunt ipsum eleifend non. Vestibulum aliquam cursus nulla sit amet lacinia. Donec a turpis in nulla porta sodales. Duis aliquam euismod sem sed vehicula. Morbi aliquam sem sit amet nibh rhoncus efficitur eu in diam. Cras vehicula tincidunt luctus. Quisque libero metus, cursus ut sapien at, pharetra viverra purus. Quisque accumsan vehicula urna, vel facilisis odio lacinia vulputate. Praesent aliquam nec libero quis euismod. Morbi sit amet ante turpis. Nunc luctus ut enim sed molestie.",
+      "categories": [
+        "Technology",
+        "Lifestyle",
+        "Health",
+        "Education"
+      ],
+      "type": "Private",
+      "id": 1
+    },
+    {
+      "title": "Invidiosum nomen est, infame, suspectum.",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quid attinet de rebus tam apertis plura requirere? Sed cum ea, quae praeterierunt, acri animo et attento intuemur, tum fit ut aegritudo sequatur, si illa mala sint, laetitia, si bona. Duo Reges: constructio interrete.\n\nEt si in ipsa gubernatione neglegentia est navis eversa, maius est peccatum in auro quam in palea. Quid de Pythagora? Bestiarum vero nullum iudicium puto. Positum est a nostris in iis esse rebus, quae secundum naturam essent, non dolere; Prioris generis est docilitas, memoria; Esse enim quam vellet iniquus iustus poterat inpune. Cum ageremus, inquit, vitae beatum et eundem supremum diem, scribebamus haec. Si sapiens, ne tum quidem miser, cum ab Oroete, praetore Darei, in crucem actus est. ",
+      "categories": [
+        "Technology",
+        "Lifestyle",
+        "Health"
+      ],
+      "type": "Private",
+      "id": 2
+    },
+    {
+      "title": "Videmus igitur ut conquiescere ne infantes quidem possint.",
+      "content": "Est tamen ea secundum naturam multoque nos ad se expetendam magis hortatur quam superiora omnia. Sin eam, quam Hieronymus, ne fecisset idem, ut voluptatem illam Aristippi in prima commendatione poneret. Sed audiamus ipsum: Compensabatur, inquit, tamen cum his omnibus animi laetitia, quam capiebam memoria rationum inventorumque nostrorum. Nobis aliter videtur, recte secusne, postea; Hic ego: Pomponius quidem, inquam, noster iocari videtur, et fortasse suo iure. Nonne videmus quanta perturbatio rerum omnium consequatur, quanta confusio? Haec qui audierit, ut ridere non curet, discedet tamen nihilo firmior ad dolorem ferendum, quam venerat. ",
+      "categories": [
+        "Technology",
+        "Lifestyle"
+      ],
+      "type": "Public",
+      "id": 3
+    },
+    {
+      "title": "Quod autem principium officii quaerunt, melius quam Pyrrho;",
+      "content": "Immo sit sane nihil melius, inquam-nondum enim id quaero-, num propterea idem voluptas est, quod, ut ita dicam, indolentia? Et hi quidem ita non sola virtute finem bonorum contineri putant, ut rebus tamen omnibus virtutem anteponant; Iam id ipsum absurdum, maximum malum neglegi. De quibus etsi a Chrysippo maxime est elaboratum, tamen a Zenone minus multo quam ab antiquis; Hoc sic expositum dissimile est superiori. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Nulla erit controversia. Hunc vos beatum; Cave putes quicquam esse verius. Sed venio ad inconstantiae crimen, ne saepius dicas me aberrare; Ex quo, id quod omnes expetunt, beate vivendi ratio inveniri et comparari potest.\n\nNondum autem explanatum satis, erat, quid maxime natura vellet. At ego quem huic anteponam non audeo dicere; Incommoda autem et commoda-ita enim estmata et dustmata appello-communia esse voluerunt, paria noluerunt. Quae cum essent dicta, discessimus. Sed utrum hortandus es nobis, Luci, inquit, an etiam tua sponte propensus es? Re mihi non aeque satisfacit, et quidem locis pluribus. Sint ista Graecorum; Pungunt quasi aculeis interrogatiunculis angustis, quibus etiam qui assentiuntur nihil commutantur animo et idem abeunt, qui venerant. Sunt enim prima elementa naturae, quibus auctis vírtutis quasi germen efficitur. Est enim effectrix multarum et magnarum voluptatum. ",
+      "categories": [
+        "Technology"
+      ],
+      "type": "Public",
+      "id": 4
+    }
+  ]
+}

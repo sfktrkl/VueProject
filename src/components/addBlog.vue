@@ -2,7 +2,8 @@
   <div>
     <div id="add-blog">
       <h2>Add a New Blog Post</h2>
-      <form>
+      <!-- Use submitted property to hide form when post is submitted -->
+      <form v-if="!submitted">
         <label>Blog Title:</label>
         <!-- Whatever we store in this input will be stored in title -->
         <input type="text" v-model.lazy="blog.title" required />
@@ -30,7 +31,12 @@
             <!-- Whichever option we select, select tag will get its value of that option -->
             <option v-for="type in blogTypes" :key="type">{{type}}</option>
         </select>
+      <div id="submit">
+        <!-- Use prevent modifier to prevent its default behaviour -->
+        <button id="submit-button" @click.prevent="post">Add Blog</button>
+      </div>
       </form>
+      <h3 id="submit-text" v-if="submitted">Thanks for adding your post.</h3>
       <div id="preview">
         <h3>Preview Blog</h3>
         <p>Blog Title: {{blog.title}}</p>
@@ -60,10 +66,22 @@ export default {
             'Public',
             'Private'
         ],
+        submitted: false,
     }
   },
   methods: {
-
+    post: function () {
+        this.$http.post('http://localhost:3000/blogs', {
+            title: this.blog.title,
+            content: this.blog.content,
+            categories: this.blog.categories,
+            type: this.blog.type,
+            // Since this returns a promise use then()
+            // (it takes time to complete this action)
+        }).then(function(data){
+          this.submitted = true;
+        });
+    }
   },
 }
 </script>
@@ -109,5 +127,22 @@ select{
     display: inline-block;
     vertical-align: middle;
     margin-top: 10px;
+}
+#submit{
+  text-align: center;
+}
+#submit-button{
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 10px 12px;
+  display: inline-block;
+}
+#submit-button:hover{
+  background-color: green;
+}
+#submit-text{
+  text-align: center;
+  color: green;
 }
 </style>
