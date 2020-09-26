@@ -40,6 +40,30 @@ export default {
       })
     }
   },
+  // Register filters and directives locally since they are only used in this component.
+  filters: {
+    // Instead of declaring name of the filter inside the quotations, it can be
+    // declared as a function like, snippet(value){} (use camel case this time)
+    'snippet': function(value) {
+      return value.slice(0, 100) + '...';
+    },
+  },
+  directives: {
+    'theme': {
+        bind(el, binding, vnode) {
+          if (binding.value == 'wide') 
+            el.style.maxWidth = "1200px";
+          else if (binding.value == 'narrow') 
+            el.style.maxWidth = "600px";
+
+          if(binding.arg == "column")
+          {
+            el.style.background = '#ddd';
+            el.style.padding = '20px';
+          }
+      }
+    },
+  },
   created() {
     this.$http.get('http://localhost:3000/blogs').then(function(data){
       // Do not show all the data, just show first 10

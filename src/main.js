@@ -5,6 +5,11 @@ import VueResource from 'vue-resource'
 // Use that plugin to create http requests
 Vue.use(VueResource);
 
+// When directives and filters registered globally, they can
+// be used in all apllication. Since, some these directives
+// and filters may not be needed in all components, they should
+// be registered locally.
+
 // Custom directives
 Vue.directive('rainbow', {
   // Use bind hook function it will be fired when directive is used
@@ -15,30 +20,12 @@ Vue.directive('rainbow', {
   }
 });
 
-Vue.directive('theme', {
-  bind(el, binding, vnode) {
-    if (binding.value == 'wide') 
-      el.style.maxWidth = "1200px";
-    else if (binding.value == 'narrow') 
-      el.style.maxWidth = "600px";
-
-    if(binding.arg == "column")
-    {
-      el.style.background = '#ddd';
-      el.style.padding = '20px';
-    }
-  }
-});
-
 // Filters
 Vue.filter('to-uppercase', function(value) {
   // value refers to data which filter is assigned.
   return value.toUpperCase();
 });
 
-Vue.filter('snippet', function(value) {
-  return value.slice(0, 100) + '...';
-})
 
 new Vue({
   el: '#app',
